@@ -2,67 +2,66 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Feedback Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Feedback Form</title>
 </head>
 
 <body>
-    <h1> Feedback Form</h1>
+    <h1>Feedback Form</h1>
 
+    <form action="/submit" method="post">
 
-<form action="/submit" method="post">
+        <fieldset>
+            <legend>Personal Information</legend>
 
-    <fieldset>
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required>
 
-    <label for="full name">Full Name:</label>
-    <input type="text" id="full name" name="full name" placeholder="Enter your full name" required>
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </fieldset>
 
-    <label for="email">Email address:</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <fieldset>
+            <legend>Feedback</legend>
 
-    <label for="password">Email address:</label>
-    <input type="password" id="pasword" name="password" placeholder="Enter your password" required>
+            <label for="feedback-category">Enter your feedback here:</label>
+            <select id="feedback-category" name="feedback_category" required>
+                <option value="">Choose a category</option>
+                <option value="bug">Bug Report</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="question">Question</option>
+            </select>
+        </fieldset>
 
-    </fieldset>
+        <fieldset>
+            <legend>Preferred Contact Method</legend>
 
-    <fieldset>
+            <label>
+                <input type="radio" name="contact" value="email" checked> email
+            </label>
 
-    <label for="feedback category">Enter your feedback here:</label>
-    <select id="category" name="category" required></select>
+            <label>
+                <input type="radio" name="contact" value="phone"> phone
+            </label>
+        </fieldset>
 
-    </fieldset>
+        <fieldset>
+            <legend>Receive Updates?</legend>
+            <label>
+                <input type="checkbox" name="receive_updates" value="yes"> Yes, please send me updates
+            </label>
+        </fieldset>
 
-    <fieldset>
+        <fieldset>
+            <legend>Additional Feedback</legend>
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" placeholder="Comments go here"></textarea>
+        </fieldset>
 
-        <label>
-            <input type="radio" name="contact" value="email" checked>email
-        </label>
+        <button type="submit">Submit feedback</button>
 
-        <label>
-            <input type="radio" name="contact" value="phone" checked>phone
-        </label>
-
-    </fieldset>
-
-    <fieldset>
-        <label>
-         <input type="checkbox" name="feature" value="updates">updates
-        </label>
-    </fieldset>
-
-    <fieldset>
-        <label for="commands">
-            feedback
-        </label>
-
-        <textarea id="commands" placeholder="commands"></textarea>
-    </fieldset>
-
-    <button type="submit">Submit feedback</button>
-
-    
-</form>
+    </form>
 
 </body>
 
